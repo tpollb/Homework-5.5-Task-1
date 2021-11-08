@@ -6,17 +6,18 @@ namespace Homework_5._5_Task_1
     {
         static string[] SplitArray (string Arg)
         {
-            int i = 0;
-            string[] arr = new string[100];
-
+            
             string[] arrSplited = Arg.Split(' ');
-            foreach (var e in arrSplited)
+            return arrSplited;
+        }
+
+        static void ArrayOutput(string[] Arg)
+        {
+            int i = 0;
+            for (i = 0; i < Arg.Length; i++)
             {
-                Console.WriteLine($"{e}");
-                i = i++;
-                arr[i] = e;
+                Console.WriteLine($"{Arg[i]}");
             }
-            return arr;
         }
 
         static void Main(string[] args)
@@ -26,7 +27,9 @@ namespace Homework_5._5_Task_1
 
             Console.WriteLine("Введите несколько слов, разделённых пробелом");
             str = Console.ReadLine();
-            SplitArray(str);
+            
+            Console.WriteLine();
+            ArrayOutput(SplitArray(str));
             
 
             Console.ReadKey();
